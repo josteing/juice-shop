@@ -19,6 +19,7 @@ where this project was mentioned or used!
 
 ## Web Links
 
+* Blog post on [Mozilla Hacks](https://hacks.mozilla.org): [Hands-On Web Security: Capture the Flag with OWASP Juice Shop](https://hacks.mozilla.org/2018/03/hands-on-web-security-capture-the-flag-with-owasp-juice-shop/)
 * Webcast recording on
   [Signal Sciences](https://vimeo.com/signalsciences):
   [Secure Development Lessons from Purposely Insecure Applications](https://vimeo.com/241965102/40f6b1778b)
@@ -93,6 +94,17 @@ where this project was mentioned or used!
 
 ## Conference and Meetup Appearances
 
+#### 2018
+
+* [OWASP Juice Shop - The Ultimate Vulnerable WebApp](https://secure360.org/session/bjorn-kimminich-owasp-juice-shop-the-ultimate-vulnerable-webapp/?conference=9826&date=20180516)
+  by Björn Kimminich,
+  [Secure360 Twin Cities](https://secure360.org/secure360-twin-cities/),
+  16.05.2018
+* [Hacking Workshop - Twin Cities vs. OWASP Juice Shop](https://secure360.org/secure360-twin-cities/schedule/?conference=9826&date=20180517)
+  with Björn Kimminich,
+  [Secure360 Twin Cities](https://secure360.org/secure360-twin-cities/),
+  17.05.2018
+
 #### 2017
 
 * [OWASP Juice Shop 5.x and beyond](https://www.owasp.org/index.php/German_OWASP_Day_2017#Programm)
@@ -134,7 +146,7 @@ where this project was mentioned or used!
   by Katy Anton,
   [OWASP Bristol (UK) Chapter](https://www.owasp.org/index.php/Bristol),
   22.06.2017
-* [Juice Shop](https://owaspsummit.org/Working-Sessions/Owasp-Projects/Juice-Shop.html)
+* [Juice Shop](https://owaspsummit.org/Outcomes/Juice-Shop/Juce-Shop-Update.html)
   and related working sessions,
   [OWASP Summit 2017](https://owaspsummit.org), 12.-16.06.2017
 * [Update on OWASP Projects & Conferences](https://www.owasp.org/index.php/London#Thursday.2C_18th_May_2017_.28Central_London.29)

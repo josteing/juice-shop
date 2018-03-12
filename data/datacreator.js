@@ -83,7 +83,7 @@ function createChallenges () {
   models.Challenge.create({
     name: 'XSS Tier 1',
     category: 'XSS',
-    description: 'Perform a <i>reflected</i> XSS attack with <code>&lt;script&gt;alert("XSS1")&lt;/script&gt;</code>.',
+    description: 'Perform a <i>reflected</i> XSS attack with <code>&lt;script&gt;alert("XSS")&lt;/script&gt;</code>.',
     difficulty: 1,
     hint: addHint('Look for an input field where its content appears in the response HTML when its form is submitted.'),
     hintUrl: addHint('https://bkimminich.gitbooks.io/pwning-owasp-juice-shop/content/part2/xss.html#perform-a-reflected-xss-attack'),
@@ -94,7 +94,7 @@ function createChallenges () {
   models.Challenge.create({
     name: 'XSS Tier 2',
     category: 'XSS',
-    description: 'Perform a <i>persisted</i> XSS attack with <code>&lt;script&gt;alert("XSS2")&lt;/script&gt;</code> bypassing a <i>client-side</i> security mechanism.',
+    description: 'Perform a <i>persisted</i> XSS attack with <code>&lt;script&gt;alert("XSS")&lt;/script&gt;</code> bypassing a <i>client-side</i> security mechanism.',
     difficulty: 3,
     hint: addHint('Only some input fields validate their input. Even less of these are persisted in a way where their content is shown on another screen.'),
     hintUrl: addHint('https://bkimminich.gitbooks.io/pwning-owasp-juice-shop/content/part2/xss.html#perform-a-persisted-xss-attack-bypassing-a-client-side-security-mechanism'),
@@ -105,7 +105,7 @@ function createChallenges () {
   models.Challenge.create({
     name: 'XSS Tier 4',
     category: 'XSS',
-    description: 'Perform a <i>persisted</i> XSS attack with <code>&lt;script&gt;alert("XSS4")&lt;/script&gt;</code> bypassing a <i>server-side</i> security mechanism.',
+    description: 'Perform a <i>persisted</i> XSS attack with <code>&lt;script&gt;alert("XSS")&lt;/script&gt;</code> bypassing a <i>server-side</i> security mechanism.',
     difficulty: 4,
     hint: addHint('The "Comment" field in the "Contact Us" screen is where you want to put your focus on.'),
     hintUrl: addHint('https://bkimminich.gitbooks.io/pwning-owasp-juice-shop/content/part2/xss.html#perform-a-persisted-xss-attack-bypassing-a-server-side-security-mechanism'),
@@ -116,7 +116,7 @@ function createChallenges () {
   models.Challenge.create({
     name: 'XSS Tier 3',
     category: 'XSS',
-    description: 'Perform a <i>persisted</i> XSS attack with <code>&lt;script&gt;alert("XSS3")&lt;/script&gt;</code> without using the frontend application at all.',
+    description: 'Perform a <i>persisted</i> XSS attack with <code>&lt;script&gt;alert("XSS")&lt;/script&gt;</code> without using the frontend application at all.',
     difficulty: 3,
     hint: addHint('You need to work with the server-side API directly. Try different HTTP verbs on different entities exposed through the API.'),
     hintUrl: addHint('https://bkimminich.gitbooks.io/pwning-owasp-juice-shop/content/part2/xss.html#perform-a-persisted-xss-attack-without-using-the-frontend-application-at-all'),
@@ -169,7 +169,18 @@ function createChallenges () {
     challenges.forgedFeedbackChallenge = challenge
   })
   models.Challenge.create({
-    name: 'Redirects',
+    name: 'Redirects Tier 1',
+    category: 'Forgotten Content',
+    description: 'Let us redirect you to a donation site that went out of business.',
+    difficulty: 1,
+    hint: addHint('We might have failed to take this out of our code properly.'),
+    hintUrl: addHint('https://bkimminich.gitbooks.io/pwning-owasp-juice-shop/content/part2/forgotten-content.html#let-us-redirect-you-to-a-donation-site-that-went-out-of-business'),
+    solved: false
+  }).then(challenge => {
+    challenges.redirectGratipayChallenge = challenge
+  })
+  models.Challenge.create({
+    name: 'Redirects Tier 2',
     category: 'Weak Security Mechanisms',
     description: 'Wherever you go, there you are.',
     difficulty: 4,
@@ -370,7 +381,7 @@ function createChallenges () {
     name: 'Extra Language',
     category: 'Forgotten Content',
     description: 'Retrieve the language file that never made it into production.',
-    difficulty: 4,
+    difficulty: 5,
     hint: addHint('Brute force is not the only option for this challenge, but a perfectly viable one.'),
     hintUrl: addHint('https://bkimminich.gitbooks.io/pwning-owasp-juice-shop/content/part2/forgotten-content.html#retrieve-the-language-file-that-never-made-it-into-production'),
     solved: false
@@ -435,7 +446,7 @@ function createChallenges () {
   models.Challenge.create({
     name: 'Premium Paywall',
     category: 'Cryptographic Issues',
-    description: '<i class="fa fa-diamond"></i><i class="fa fa-diamond"></i><i class="fa fa-diamond"></i><i class="fa fa-diamond"></i><i class="fa fa-diamond"></i><!--R9U8AvGlBbjhHXHW422jxVL2hoLBr8wflIAQ8d/jlERpKnrNlMErs1JfgT9EK/kzTtdb1GPhuWAz3i2HhomhaFMxvg4na+tvTi+8DoQoeqZH1KADoM2NJ7UOKc14b54cdRTXiYV7yFUzbPjjPVOWZFSmDcG6z+jQIPZtJuJ/tQc=--> <a href="/redirect?to=https://blockchain.info/address/1AbKfgvw9psQ41NbLi8kufDQTezwG8DRZm" target="_blank" class="btn btn-danger btn-xs"><i class="fa fa-btc fa-sm"></i> Unlock Premium Challenge</a> to access exclusive content.',
+    description: '<i class="far fa-gem"></i><i class="far fa-gem"></i><i class="far fa-gem"></i><i class="far fa-gem"></i><i class="far fa-gem"></i><!--i0ycvJyZ+WoHTEIjAatNFK5A8r8GxRbwOLC2OuXHVsZcKkEc3lRgc58KjEKn2Byj8Fg3A3ai5yahQANdWL/5j5k3E3qHTjm93tuenE0YlauCdy+7tGkFvo5OltIhiXSWt1SiICecyghFZ8ca/aKtHQ==--> <a href="/redirect?to=https://blockchain.info/address/1AbKfgvw9psQ41NbLi8kufDQTezwG8DRZm" target="_blank" class="btn btn-danger btn-xs"><i class="fab fa-btc fa-sm"></i> Unlock Premium Challenge</a> to access exclusive content.',
     difficulty: 5,
     hint: addHint('You do not have to pay anything to unlock this challenge! Nonetheless, donations are very much appreciated.'),
     hintUrl: addHint('https://bkimminich.gitbooks.io/pwning-owasp-juice-shop/content/part2/crypto.html#unlock-premium-challenge-to-access-exclusive-content'),
@@ -569,6 +580,61 @@ function createChallenges () {
     solved: false
   }).then(challenge => {
     challenges.misplacedSignatureFileChallenge = challenge
+  })
+  models.Challenge.create({
+    name: 'Deprecated Interface',
+    category: 'Forgotten Content',
+    description: 'Use a deprecated B2B interface that was not properly shut down.',
+    difficulty: 1,
+    hint: addHint('The developers who disabled the interface think they could go invisible by just closing their eyes.'),
+    hintUrl: addHint('https://bkimminich.gitbooks.io/pwning-owasp-juice-shop/content/part2/forgotten-content.html#use-a-deprecated-b2b-interface-that-was-not-properly-shut-down'),
+    solved: false
+  }).then(challenge => {
+    challenges.deprecatedInterfaceChallenge = challenge
+  })
+  models.Challenge.create({
+    name: 'XXE Tier 1',
+    category: 'XXE',
+    description: 'Retrieve the content of <code>C:\\Windows\\system.ini</code> or <code>/etc/passwd</code> from the server.',
+    difficulty: 3,
+    hint: addHint('The leverage point for this challenge is the deprecated B2B interface.'),
+    hintUrl: addHint('https://bkimminich.gitbooks.io/pwning-owasp-juice-shop/content/part2/xxe.html#retrieve-the-content-of-cwindowssystemini-or-etcpasswd-from-the-server'),
+    solved: false
+  }).then(challenge => {
+    challenges.xxeFileDisclosureChallenge = challenge
+  })
+  models.Challenge.create({
+    name: 'XXE Tier 2',
+    category: 'XXE',
+    description: 'Give the server something to chew on for quite a while.',
+    difficulty: 4,
+    hint: addHint('It is not as easy as sending a large amount of data directly to the deprecated B2B interface.'),
+    hintUrl: addHint('https://bkimminich.gitbooks.io/pwning-owasp-juice-shop/content/part2/xxe.html#give-the-server-something-to-chew-on-for-quite-a-while'),
+    solved: false
+  }).then(challenge => {
+    challenges.xxeDosChallenge = challenge
+  })
+  models.Challenge.create({
+    name: 'RCE Tier 1',
+    category: 'Deserialization',
+    description: 'Perform a Remote Code Execution that would keep a less hardened application busy <em>forever</em>.',
+    difficulty: 5,
+    hint: addHint('The feature you need to exploit for this challenge is not directly advertised anywhere.'),
+    hintUrl: addHint('https://bkimminich.gitbooks.io/pwning-owasp-juice-shop/content/part2/deserialization.html#perform-a-remote-code-execution-that-would-keep-a-less-hardened-application-busy-forever'),
+    solved: false
+  }).then(challenge => {
+    challenges.rceChallenge = challenge
+  })
+  models.Challenge.create({
+    name: 'RCE Tier 2',
+    category: 'Deserialization',
+    description: 'Perform a Remote Code Execution that occupies the server for a while without using infinite loops.',
+    difficulty: 5,
+    hint: addHint('Your attack payload must not trigger the protection againt too many iterations.'),
+    hintUrl: addHint('https://bkimminich.gitbooks.io/pwning-owasp-juice-shop/content/part2/deserialization.html#perform-a-remote-code-execution-that-occupies-the-server-for-a-while-without-using-infinite-loops'),
+    solved: false
+  }).then(challenge => {
+    challenges.rceOccupyChallenge = challenge
   })
 }
 
